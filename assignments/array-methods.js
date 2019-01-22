@@ -88,8 +88,20 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you 
 // could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1- Getting the average amount of donations
+ let donationAverage = [];
+ donationAverage = runners.reduce((starter, elements) => starter + elements.donation, 0);
+ donationAverage /= runners.length;
+ console.log(donationAverage);
 
-// Problem 2
 
-// Problem 3
+// Problem 2 the runner's Last names converted to uppercase
+let allCaps2 = [];
+allCaps2 = runners.map(elements => elements.last_name.toUpperCase());
+console.log(allCaps2); 
+// Problem 3 A list who donated less than 20 dollars,
+let Donators20 = [];
+Donators20 = runners.filter(elements => elements.donation < 20).sort((a,b) => b.donation - a.donation)
+.map(elements => `${elements.first_name} ${elements.last_name} - $${elements.donation}`);
+
+console.log(Donators20);
