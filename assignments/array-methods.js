@@ -99,9 +99,9 @@ console.log(ticketPriceTotal);
 let allCaps2 = [];
 allCaps2 = runners.map(elements => elements.last_name.toUpperCase());
 console.log(allCaps2); 
-// Problem 3 A list who donated less than 20 dollars,
-let Donators20 = [];
-Donators20 = runners.filter(elements => elements.donation < 20).sort((a,b) => b.donation - a.donation)
+// Problem 3 A list who donated more than 50 dollars,
+let Donators50 = [];
+Donators50 = runners.filter(elements => elements.donation > 50).sort((a,b) => b.donation - a.donation)
 .map(elements => `${elements.first_name} ${elements.last_name} - $${elements.donation}`);
 
-console.log(Donators20);
+console.log(Donators50);
